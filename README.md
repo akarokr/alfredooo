@@ -11,3 +11,26 @@ You need a YML file to set your tasks, the script will read them and execute the
 ```
 $ alfredooo.py -p <PIPELINE_FILE> -u <GIT_URL
 ```
+
+### YML file format
+The pipeline file has only three main hashes.
+- Branch: Repository branch that should be used to execute the code.
+- Tasks: Saved commands that can be used to create a pipeline
+- Pipelines: Group of ordered tasks
+
+Example:
+
+```yml
+# Tasks should be execute from this branch
+branch: <BRANCH NAME>
+
+#Things a wanna execute
+tasks:
+  - <SOME NAME>:
+      cmd: <COMMANDS>
+
+# Ordenaded way to run my steps
+pipelines:
+  - <NOME NAME>:
+     - <TASK NAME>
+```
